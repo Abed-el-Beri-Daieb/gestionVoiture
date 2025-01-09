@@ -17,16 +17,16 @@
             </ul>
             <ul class="navbar-nav me-left">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Assurance</a>
+                    <a class="nav-link" href="assuranceView.php">Assurance</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Vignette</a>
+                    <a class="nav-link" href="vignetteView.php">Vignette</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Pneu</a>
+                    <a class="nav-link" href="pneuView.php">Pneu</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Repartition</a>
+                    <a class="nav-link" href="reparationView.php">Repartition</a>
                 </li>
             </ul>
 

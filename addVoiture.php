@@ -23,11 +23,8 @@
         $res = $crud->addVoiture($voiture);
     
         if ($res) {
-            /*header("location:nosVoiture.php");
-            exit;*/
-            echo "<script>alert(ajout aves succes)</script>";
-        }else{
-            echo "echouee";
+            header("location:index.php");
+            exit;
         }
     }
 ?>
