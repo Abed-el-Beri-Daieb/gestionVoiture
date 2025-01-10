@@ -57,17 +57,22 @@
 ?>
 <h2 style="text-align: center; margin-bottom: 3%; color: navy;">Ajouter voiture :</h2>
 <form action="addVoiture.php" method="post" class=form-control>
+
+    <!-- Voiture -->
     <label>id Voiture</label><input type="text" name="id_v" id="" class=form-control></br> 
     <label>Matricule</label><input type="text" name="mat" id="" class=form-control></br>
     <label>Type</label><input type="text" name="type" id="" class=form-control></br>
     <label>Carte grise</label><input type="text" name="carte" id="" class=form-control></br>
 
+    <!-- Assurance -->
     <label>Date_Debut_Assurance</label><input type="date" name="date_deb_assurance" class="form-control"><br>
     <label>Date_Fin_Assurance</label><input type="date" name="date_fin_assurance" class="form-control"><br>
 
+    <!-- Vignette -->
     <label>Date_Debut_Vignette</label><input type="date" name="date_deb_vignette" class="form-control"><br>
     <label>Date_Fin_Vignette</label><input type="date" name="date_fin_vignette" class="form-control"><br>
 
+    <!-- Vignette -->
     <label>Type de Pneu</label><input type="text" name="type_pneu" id="" class=form-control></br>
     <label>Date Installation</label><input type="date" name="date_installation" id="" class=form-control></br>
     <label>nb Kilometrage</label><input type="number" name="nb_kilometre" id="" class=form-control></br>

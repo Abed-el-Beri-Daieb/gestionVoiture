@@ -37,7 +37,7 @@
                     <td><?= $assurance[2] ?></td>
                     <td><?= $assurance[3] ?></td>
                     <td><?= $assurance[4] ?></td>
-                    <td><a href="#" class="btn btn-dark btn-sm">Editer</a></td>
+                    <td><a href="assuranceUpdate.php?matricule=<?= $assurance[1] ?>" class="btn btn-dark btn-sm">Editer</a></td>
                 </tr>
 
             <?php
