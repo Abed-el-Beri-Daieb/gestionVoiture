@@ -16,5 +16,16 @@
             return $res->fetchAll(PDO::FETCH_NUM);
         }
 
+        function addPneu(pneu $pneu){
+            $matricule = $pneu->getMatricule();
+            $type = $pneu->getType();
+            $date_installation = $pneu->getDateInstallation();
+            $nb_kilometre = $pneu->getNbKilometre();
+
+            $sql = "insert into pneu values (null,'$matricule','$type','$date_installation','$nb_kilometre')";
+            $res = $this->pdo->exec($sql);
+            return $res;
+        }
+
     }
 ?>

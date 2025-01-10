@@ -36,14 +36,14 @@
                 <td><?= $voiture[2] ?></td>
                 <td><?= $voiture[3] ?></td>
                 <td><a href="#" class="btn btn-info btn-sm">Voir détail...</a></td>
-                <td><a href="#" class="btn btn-danger btn-sm">Supprimer</a></td>
                 <td><a href="#" class="btn btn-dark btn-sm">Editer</a></td>
+                <td><a href="#" class="btn btn-danger btn-sm">Supprimer</a></td>
             </tr>
         <?php
         }
         ?>
     </tbody>
 </table>
-
+<center><a href="addVoiture.php" class="btn btn-success btn-lg">Ajouter</a></center>
 </body>
 </html>

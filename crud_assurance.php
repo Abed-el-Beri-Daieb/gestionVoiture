@@ -16,5 +16,16 @@
             return $res->fetchAll(PDO::FETCH_NUM);
         }
 
+        function addAssurance(assurance $assurance){
+            $matricule = $assurance->getMatricule();
+            $date_deb_assurance = $assurance->getDateDebut();
+            $date_fin_assurance = $assurance->getDateFin();
+            $validite = $assurance->getValidite();
+
+            $sql = "insert into assurance values (null,'$matricule','$date_deb_assurance','$date_fin_assurance','$validite')";
+            $res = $this->pdo->exec($sql);
+            return $res;
+        }
+
     }
 ?>

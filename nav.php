@@ -11,9 +11,6 @@
                         <span class="visually-hidden">(current)</span>
                     </a>    
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="addVoiture.php">Ajouter voiture</a>
-                </li>
             </ul>
             <ul class="navbar-nav me-left">
                 <li class="nav-item">
@@ -26,7 +23,7 @@
                     <a class="nav-link" href="pneuView.php">Pneu</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="reparationView.php">Repartition</a>
+                    <a class="nav-link" href="reparationView.php">Reparation</a>
                 </li>
             </ul>
 

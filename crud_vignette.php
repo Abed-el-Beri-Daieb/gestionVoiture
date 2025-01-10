@@ -16,5 +16,16 @@
             return $res->fetchAll(PDO::FETCH_NUM);
         }
 
+        function addVignette(vignette $vignette){
+            $matricule = $vignette->getMatricule();
+            $date_deb_vignette = $vignette->getDateDebut();
+            $date_fin_vignette = $vignette->getDateFin();
+            $validite = $vignette->getValidite();
+
+            $sql = "insert into vignette values (null,'$matricule','$date_deb_vignette','$date_fin_vignette','$validite')";
+            $res = $this->pdo->exec($sql);
+            return $res;
+        }
+
     }
 ?>
