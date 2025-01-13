@@ -26,6 +26,6 @@
             $res = $this->pdo->exec($sql);
             return $res;
         }
-
+        
     }
 ?>

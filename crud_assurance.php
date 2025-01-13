@@ -27,11 +27,17 @@
             return $res;
         }
 
-        function updateAssurance($matricule , $date_deb_assurance , $date_fin_assurance){
+        function updateAssurance(assurance $assurance){
+            $matricule = $assurance->getMatricule();
+            $date_debut = $assurance->getDateDebut();
+            $date_fin = $assurance->getDateFin();
+            $validite = $assurance->getValidite();
+
             $sql = "update assurance 
-                    set date_debut = '$date_deb_assurance'
-                    , date_fin = '$date_fin_assurance'
-                    where matricule = $matricule";
+                    set date_debut = '$date_debut'
+                    , date_fin = '$date_fin'
+                    , validite = '$validite'
+                    where matricule = '$matricule'";
             $res = $this->pdo->exec($sql);
             return $res;
         }
