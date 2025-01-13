@@ -27,5 +27,20 @@ class crud_voiture{
         $res = $this->pdo->query($sql);
         return $res->fetchAll(PDO::FETCH_NUM);
     }
+
+    function updateVoiture(voiture $voiture){
+        $id_voiture = $voiture->getIdVoiture();
+        $matricule = $voiture->getMatricule();
+        $type = $voiture->getType();
+        $carte_grise = $voiture->getCarteGrise();
+
+        $sql = "update voiture 
+                set id_voiture = $id_voiture
+                , type = '$type'
+                , carte_grise = '$carte_grise'
+                where matricule = '$matricule'";
+        $res = $this->pdo->exec($sql);
+        return $res;
+    }
 }
 ?>
