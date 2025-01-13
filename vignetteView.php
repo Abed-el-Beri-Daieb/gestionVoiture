@@ -37,7 +37,7 @@
                     <td><?= $vignette[2] ?></td>
                     <td><?= $vignette[3] ?></td>
                     <td><?= $vignette[4] ?></td>
-                    <td><a href="#" class="btn btn-dark btn-sm">Editer</a></td>
+                    <td><a href="vignetteUpdate.php?matricule=<?= $vignette[1] ?>" class="btn btn-dark btn-sm">Editer</a></td>
                 </tr>
 
             <?php

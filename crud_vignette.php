@@ -26,6 +26,22 @@
             $res = $this->pdo->exec($sql);
             return $res;
         }
-        
+
+        function updateVignette(vignette $vignette){
+            $matricule = $vignette->getMatricule();
+            $date_debut = $vignette->getDateDebut();
+            $date_fin = $vignette->getDateFin();
+            $validite = $vignette->getValidite();
+
+            $sql = "update vignette
+                    set date_debut = '$date_debut'
+                    , date_fin = '$date_fin'
+                    , validite = '$validite'
+                    where matricule = '$matricule'";
+            
+            $res = $this->pdo->exec($sql);
+            return $res;
+        }
+
     }
 ?>

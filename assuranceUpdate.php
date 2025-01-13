@@ -9,9 +9,6 @@
 <body>
     <?php
         require_once "nav.php";
-
-            /*$matricule = htmlspecialchars($_GET['matricule']);
-             // il y'a un probleme ici $matricule undefined after $_POST*/
             
             if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['matricule'])) {
                 $matricule = htmlspecialchars($_GET['matricule']);
