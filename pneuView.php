@@ -37,7 +37,7 @@
                     <td><?= $pneu[2] ?></td>
                     <td><?= $pneu[3] ?></td>
                     <td><?= $pneu[4] ?></td>
-                    <td><a href="#" class="btn btn-dark btn-sm">Editer</a></td>
+                    <td><a href="pneuUpdate.php?matricule=<?= $pneu[1] ?>" class="btn btn-dark btn-sm">Editer</a></td>
                 </tr>
 
             <?php

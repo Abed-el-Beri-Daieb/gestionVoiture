@@ -27,5 +27,20 @@
             return $res;
         }
 
+        function updatePneu(pneu $pneu){
+            $matricule = $pneu->getMatricule();
+            $type = $pneu->getType();
+            $date_installation = $pneu->getDateInstallation();
+            $nb_kilometre = $pneu->getNbKilometre();
+
+            $sql = "update pneu
+                    set type = '$type'
+                    , date_installation = '$date_installation'
+                    , nb_kilometre = $nb_kilometre
+                    where matricule = '$matricule'";
+            $res = $this->pdo->exec($sql);
+            return $res;
+        }
+
     }
 ?>
