@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gestionVoiture</title>
+    <link rel="stylesheet" href="bootstrap.css">
+</head>
+<body>
+    <?php require_once "nav.php"; ?>
+    <h2 style="color: navy;">Voiture :</h2>
+    <table class="table">
+        <thead>
+            <th>id</th>
+            <th>Matricule</th>
+            <th>Type</th>
+            <th>Carte Grise</th>
+        </thead>
+        <tbody>
+            <?php
+
+                if(isset($_GET['matricule'])){
+                    $matricule = htmlspecialchars($_GET['matricule']);
+                }
+
+                require_once "crud_voiture.php";
+
+                $crud = new crud_voiture();
+                $voiture = $crud->find($matricule);
+                
+            ?>
+            <tr>
+                <td><?= $voiture[0] ?></td>
+                <td><?= $voiture[1] ?></td>
+                <td><?= $voiture[2] ?></td>
+                <td><?= $voiture[3] ?></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h2 style="color: navy;">Assurance :</h2>
+    <table class="table">
+        <thead>
+            <th>Date_Debut</th>
+            <th>Date_Fin</th>
+            <th>Validité</th>
+        </thead>
+        <tbody>
+            <?php
+                require_once "crud_assurance.php";
+                $crud = new crud_assurance();
+                $assurance = $crud->find($matricule);
+            ?>
+            <tr>
+                <td><?= $assurance[2] ?></td>
+                <td><?= $assurance[3] ?></td>
+                <td><?= $assurance[4] ?></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2 style="color: navy;">Vignette :</h2>
+    <table class="table">
+        <thead>
+            <th>Date_Debut</th>
+            <th>Date_Fin</th>
+            <th>Validité</th>
+        </thead>
+        <tbody>
+            <?php
+                require_once "crud_vignette.php";
+                $crud = new crud_vignette();
+                $vignette = $crud->find($matricule);
+            ?>
+            <tr>
+                <td><?= $vignette[2] ?></td>
+                <td><?= $vignette[3] ?></td>
+                <td><?= $vignette[4] ?></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2 style="color: navy;">Pneu :</h2>
+    <table class="table">
+        <thead>
+            <th>Type</th>
+            <th>Date_instalaltion</th>
+            <th>Nb_Kilometrage</th>
+        </thead>
+        <tbody>
+            <?php
+                require_once "crud_pneu.php";
+                $crud = new crud_pneu();
+                $pneu = $crud->find($matricule);
+            ?>
+            <tr>
+                <td><?= $pneu[2] ?></td>
+                <td><?= $pneu[3] ?></td>
+                <td><?= $pneu[4] ?></td>
+            </tr>
+        </tbody>
+    </table>
+    
+</body>
+</html>

@@ -42,5 +42,11 @@
             return $res;
         }
 
+        function find($matricule){
+            $sql = "select * from assurance where matricule = '$matricule'";
+            $res = $this->pdo->query($sql);
+            return $res->fetch(PDO::FETCH_NUM);
+        }
+
     }
 ?>

@@ -35,7 +35,7 @@
                 <td><?= $voiture[1] ?></td>
                 <td><?= $voiture[2] ?></td>
                 <td><?= $voiture[3] ?></td>
-                <td><a href="#" class="btn btn-info btn-sm">Voir détail...</a></td>
+                <td><a href="detail.php?matricule=<?= $voiture[1] ?>" class="btn btn-info btn-sm">Voir détail...</a></td>
                 <td><a href="voitureUpdate.php?matricule=<?= $voiture[1] ?>" class="btn btn-dark btn-sm">Editer</a></td>
                 <td><a href="#" class="btn btn-danger btn-sm">Supprimer</a></td>
             </tr>
