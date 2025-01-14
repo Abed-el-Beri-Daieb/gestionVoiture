@@ -20,10 +20,9 @@
         $matricule = htmlspecialchars($_POST['matricule']);
         $date_debut = htmlspecialchars($_POST['date_deb_vignette']);
         $date_fin = htmlspecialchars($_POST['date_fin_vignette']);
-        $validite = "1 mois"; // a modifier (soustraction)
 
         $crud = new crud_vignette();
-        $vignette = new vignette($matricule, $date_debut, $date_fin, $validite);
+        $vignette = new vignette($matricule, $date_debut, $date_fin);
         $res = $crud->updateVignette($vignette);
 
         if($res){

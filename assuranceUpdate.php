@@ -20,9 +20,8 @@
                 $matricule = htmlspecialchars($_POST['matricule']);
                 $date_deb_assurance = htmlspecialchars($_POST['date_deb_assurance']);
                 $date_fin_assurance = htmlspecialchars($_POST['date_fin_assurance']);
-                $validite = "1 mois"; // a modifier (soustraction)
 
-                $assurance = new assurance($matricule, $date_deb_assurance, $date_fin_assurance, $validite);
+                $assurance = new assurance($matricule, $date_deb_assurance, $date_fin_assurance);
                 $crud = new crud_assurance();
                 $res = $crud->updateAssurance($assurance);
                 

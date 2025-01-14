@@ -30,13 +30,28 @@
             $lesVignettes = $crud->findAllVignette();
 
             foreach ($lesVignettes as $vignette) {
+                $today = new DateTime();
+                $date_fin_vignette = new DateTime($vignette[3]);
+
+                $interval = $today->diff($date_fin_vignette); 
+                $total_days = $interval->invert ? 0 : $interval->days;
+
+                if ($total_days > 0) {
+                    $months = $interval->m + ($interval->y * 12);
+                    $days = $interval->d;
+                    $validite = "$months mois et $days jours";
+                } else {
+                    $validite = "Expirée";
+                }
+
+                $validite_style = ($total_days < 60 && $total_days >= 0) ? "color: red;" : "color: green;";
             ?>
                 <tr>
                     <td><?= $vignette[0] ?></td>
                     <td><?= $vignette[1] ?></td>
                     <td><?= $vignette[2] ?></td>
                     <td><?= $vignette[3] ?></td>
-                    <td><?= $vignette[4] ?></td>
+                    <td style="<?= $validite_style ?>"><?= $validite ?></td>
                     <td><a href="vignetteUpdate.php?matricule=<?= $vignette[1] ?>" class="btn btn-dark btn-sm">Editer</a></td>
                 </tr>
 

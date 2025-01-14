@@ -3,14 +3,12 @@ class assurance{
     private $matricule;
     private $date_debut;
     private $date_fin;
-    private $validite;
 
-    public function __construct($matricule,$date_debut,$date_fin,$validite)
+    public function __construct($matricule,$date_debut,$date_fin)
     {
     $this->matricule = $matricule;
     $this->date_debut = $date_debut;
     $this->date_fin = $date_fin;
-    $this->validite = $validite;
     }
     
     /**
@@ -67,23 +65,6 @@ class assurance{
         return $this;
     }
 
-    /**
-     * Get the value of validite
-     */
-    public function getValidite()
-    {
-        return $this->validite;
-    }
-
-    /**
-     * Set the value of validite
-     */
-    public function setValidite($validite): self
-    {
-        $this->validite = $validite;
-
-        return $this;
-    }
 }
 
 

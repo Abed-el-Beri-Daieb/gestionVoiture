@@ -28,17 +28,16 @@
         $crudA = new crud_assurance();
         $date_deb_assurance = htmlspecialchars($_POST['date_deb_assurance']);
         $date_fin_assurance = htmlspecialchars($_POST['date_fin_assurance']);
-        $validite_assurance = "1 mois"; // a modifier (soustraction)
 
-        $assurance = new assurance($matricule,$date_deb_assurance,$date_fin_assurance,$validite_assurance);
+
+        $assurance = new assurance($matricule,$date_deb_assurance,$date_fin_assurance);
         $res2 = $crudA->addAssurance($assurance);
 
         $crudVig = new crud_vignette();
         $date_deb_vignette = htmlspecialchars($_POST['date_deb_vignette']);
         $date_fin_vignette = htmlspecialchars($_POST['date_fin_vignette']);
-        $validite_vignette = "1 mois"; // a modifier (soustraction)
 
-        $vignette = new vignette($matricule,$date_deb_vignette,$date_fin_vignette,$validite_vignette);
+        $vignette = new vignette($matricule,$date_deb_vignette,$date_fin_vignette);
         $res3 = $crudVig->addVignette($vignette);
 
         $crudP = new crud_pneu();

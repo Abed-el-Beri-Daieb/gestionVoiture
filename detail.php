@@ -54,7 +54,24 @@
             <tr>
                 <td><?= $assurance[2] ?></td>
                 <td><?= $assurance[3] ?></td>
-                <td><?= $assurance[4] ?></td>
+                <?php
+                    $today = new DateTime();
+                    $date_fin_assurance = new DateTime($assurance[3]);
+
+                    $interval = $today->diff($date_fin_assurance); 
+                    $total_days = $interval->invert ? 0 : $interval->days;
+
+                    if ($total_days > 0) {
+                        $months = $interval->m + ($interval->y * 12);
+                        $days = $interval->d;
+                        $validite = "$months mois et $days jours";
+                    } else {
+                        $validite = "Expirée";
+                    }
+
+                    $validite_style = ($total_days < 60 && $total_days >= 0) ? "color: red;" : "color: green;";
+                ?>
+                <td style="<?= $validite_style ?>"><?= $validite ?></td>
             </tr>
         </tbody>
     </table>
@@ -75,7 +92,24 @@
             <tr>
                 <td><?= $vignette[2] ?></td>
                 <td><?= $vignette[3] ?></td>
-                <td><?= $vignette[4] ?></td>
+                <?php
+                    $today = new DateTime();
+                    $date_fin_vignette = new DateTime($vignette[3]);
+
+                    $interval = $today->diff($date_fin_vignette); 
+                    $total_days = $interval->invert ? 0 : $interval->days;
+
+                    if ($total_days > 0) {
+                        $months = $interval->m + ($interval->y * 12);
+                        $days = $interval->d;
+                        $validite = "$months mois et $days jours";
+                    } else {
+                        $validite = "Expirée";
+                    }
+
+                    $validite_style = ($total_days < 60 && $total_days >= 0) ? "color: red;" : "color: green;";
+                ?>
+                <td style="<?= $validite_style ?>"><?= $validite ?></td>
             </tr>
         </tbody>
     </table>

@@ -20,9 +20,8 @@
             $matricule = $assurance->getMatricule();
             $date_deb_assurance = $assurance->getDateDebut();
             $date_fin_assurance = $assurance->getDateFin();
-            $validite = $assurance->getValidite();
 
-            $sql = "insert into assurance values (null,'$matricule','$date_deb_assurance','$date_fin_assurance','$validite')";
+            $sql = "insert into assurance values (null,'$matricule','$date_deb_assurance','$date_fin_assurance')";
             $res = $this->pdo->exec($sql);
             return $res;
         }
@@ -31,12 +30,10 @@
             $matricule = $assurance->getMatricule();
             $date_debut = $assurance->getDateDebut();
             $date_fin = $assurance->getDateFin();
-            $validite = $assurance->getValidite();
 
             $sql = "update assurance 
                     set date_debut = '$date_debut'
                     , date_fin = '$date_fin'
-                    , validite = '$validite'
                     where matricule = '$matricule'";
             $res = $this->pdo->exec($sql);
             return $res;
