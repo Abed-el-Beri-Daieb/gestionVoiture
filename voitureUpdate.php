@@ -9,13 +9,25 @@
 <body>
     <?php
         require_once "nav.php";
+        require_once "crud_voiture.php";
             
             if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['matricule'])) {
                 $matricule = htmlspecialchars($_GET['matricule']);
+
+                $crud = new crud_voiture();
+                $voiture = $crud->find($matricule);
+
+                if ($voiture) {
+                    $id_voiture = $voiture[0];
+                    $type = $voiture[2];
+                    $carte_grise = $voiture[3];
+                } else {
+                    $id_voiture = $type = $carte_grise = '';
+                }
+
             }
 
             if(isset($_POST['ok'])){
-                require_once "crud_voiture.php";
 
                 $id_voiture = htmlspecialchars($_POST['id_voiture']);
                 $matricule = htmlspecialchars($_POST['matricule']);
@@ -35,9 +47,9 @@
 
     <form action="voitureUpdate.php"  method="post" class="form-control">
         <label>Matricule</label><input type="text" name="matricule" value="<?= htmlspecialchars($matricule) ?>" class="form-control" readonly><br>
-        <label>id_voiture</label> <input type="number" class="form-control" name="id_voiture"><br>
-        <label>Type</label> <input type="text" class="form-control" name="type"><br>
-        <label>Carte Grise</label> <input type="text" class="form-control" name="carte_grise"><br>
+        <label>id_voiture</label> <input type="number" class="form-control" name="id_voiture" value="<?= htmlspecialchars($id_voiture) ?>"><br>
+        <label>Type</label> <input type="text" class="form-control" name="type" value="<?= htmlspecialchars($type) ?>"><br>
+        <label>Carte Grise</label> <input type="text" class="form-control" name="carte_grise" value="<?= htmlspecialchars($carte_grise) ?>"><br>
         
         <br>
         <input type="submit" value="Modifier" class="btn btn-success btn-lg" name="ok">
