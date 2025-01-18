@@ -3,8 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gestionVoiture</title>
+    <title>Ajouter Voiture</title>
     <link rel="stylesheet" href="bootstrap.css">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Light background */
+            color: #495057; /* Dark text for good contrast */
+        }
+
+        .container {
+            margin-top: 30px;
+            background-color: #ffffff; /* White form background */
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #007bff; /* A blue color for the title */
+        }
+
+        label {
+            font-weight: bold;
+            color: #333333; /* Darker labels for better readability */
+        }
+
+        .form-control {
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        .btn-success {
+            background-color: #28a745; /* Success green */
+        }
+
+        .btn-danger {
+            background-color: #dc3545; /* Danger red */
+        }
+    </style>
 </head>
 <body>
 
@@ -28,15 +69,12 @@
         $crudA = new crud_assurance();
         $date_deb_assurance = htmlspecialchars($_POST['date_deb_assurance']);
         $date_fin_assurance = htmlspecialchars($_POST['date_fin_assurance']);
-
-
         $assurance = new assurance($matricule,$date_deb_assurance,$date_fin_assurance);
         $res2 = $crudA->addAssurance($assurance);
 
         $crudVig = new crud_vignette();
         $date_deb_vignette = htmlspecialchars($_POST['date_deb_vignette']);
         $date_fin_vignette = htmlspecialchars($_POST['date_fin_vignette']);
-
         $vignette = new vignette($matricule,$date_deb_vignette,$date_fin_vignette);
         $res3 = $crudVig->addVignette($vignette);
 
@@ -44,7 +82,6 @@
         $type_pneu = htmlspecialchars($_POST['type_pneu']);
         $date_installation = htmlspecialchars($_POST['date_installation']);
         $nb_kilometre = htmlspecialchars($_POST['nb_kilometre']);
-
         $pneu = new pneu($matricule,$type_pneu,$date_installation,$nb_kilometre);
         $res4 = $crudP->addPneu($pneu);
 
@@ -54,32 +91,69 @@
         }
     }
 ?>
-<h2 style="text-align: center; margin-bottom: 3%; color: navy;">Ajouter voiture :</h2>
-<form action="addVoiture.php" method="post" class=form-control>
 
-    <!-- Voiture -->
-    <label>id Voiture</label><input type="text" name="id_v" id="" class=form-control></br> 
-    <label>Matricule</label><input type="text" name="mat" id="" class=form-control></br>
-    <label>Type</label><input type="text" name="type" id="" class=form-control></br>
-    <label>Carte grise</label><input type="text" name="carte" id="" class=form-control></br>
+<div class="container">
+    <h2 class="text-center">Ajouter Voiture</h2>
+    <form action="addVoiture.php" method="post">
 
-    <!-- Assurance -->
-    <label>Date_Debut_Assurance</label><input type="date" name="date_deb_assurance" class="form-control"><br>
-    <label>Date_Fin_Assurance</label><input type="date" name="date_fin_assurance" class="form-control"><br>
+        <!-- Voiture -->
+        <div class="form-group">
+            <label for="id_v">id Voiture</label>
+            <input type="text" name="id_v" id="id_v" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="mat">Matricule</label>
+            <input type="text" name="mat" id="mat" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="type">Type</label>
+            <input type="text" name="type" id="type" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="carte">Carte Grise</label>
+            <input type="text" name="carte" id="carte" class="form-control" required>
+        </div>
 
-    <!-- Vignette -->
-    <label>Date_Debut_Vignette</label><input type="date" name="date_deb_vignette" class="form-control"><br>
-    <label>Date_Fin_Vignette</label><input type="date" name="date_fin_vignette" class="form-control"><br>
+        <!-- Assurance -->
+        <div class="form-group">
+            <label for="date_deb_assurance">Date Début Assurance</label>
+            <input type="date" name="date_deb_assurance" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="date_fin_assurance">Date Fin Assurance</label>
+            <input type="date" name="date_fin_assurance" class="form-control" required>
+        </div>
 
-    <!-- Vignette -->
-    <label>Type de Pneu</label><input type="text" name="type_pneu" id="" class=form-control></br>
-    <label>Date Installation</label><input type="date" name="date_installation" id="" class=form-control></br>
-    <label>nb Kilometrage</label><input type="number" name="nb_kilometre" id="" class=form-control></br>
+        <!-- Vignette -->
+        <div class="form-group">
+            <label for="date_deb_vignette">Date Début Vignette</label>
+            <input type="date" name="date_deb_vignette" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="date_fin_vignette">Date Fin Vignette</label>
+            <input type="date" name="date_fin_vignette" class="form-control" required>
+        </div>
 
-    <input type="submit" value="Ajouter" name="ok" class="btn btn-success btn-lg">
-    <input type="reset" value="Annuler" class="btn btn-danger btn-lg">
-</form>
+        <!-- Pneu -->
+        <div class="form-group">
+            <label for="type_pneu">Type de Pneu</label>
+            <input type="text" name="type_pneu" id="type_pneu" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="date_installation">Date Installation</label>
+            <input type="date" name="date_installation" id="date_installation" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="nb_kilometre">Kilométrage</label>
+            <input type="number" name="nb_kilometre" id="nb_kilometre" class="form-control" required>
+        </div>
 
+        <div class="form-group text-center">
+            <input type="submit" value="Ajouter" name="ok" class="btn btn-success btn-lg">
+            <input type="reset" value="Annuler" class="btn btn-danger btn-lg">
+        </div>
+    </form>
+</div>
 
 </body>
 </html>

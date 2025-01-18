@@ -7,60 +7,58 @@
     <link rel="stylesheet" href="bootstrap.css">
 </head>
 <body>
-    <?php
-        require_once "nav.php";
-    ?>
-    <h2 style="text-align: center; margin-bottom: 3%; color: navy;">Les Vignettes :</h2>
-    <table class="table" id="example">
-        <thead>
-        <tr>
-            <th>id</th>
-            <th>Matricule</th>
-            <th>Date_Debut</th>
-            <th>Date_Fin</th>
-            <th>Validité</th>
-            <th>Action</th>
-        </tr>
-        </thead>
-        <tbody>
-            <?php
-            require_once "crud_vignette.php";
+    <?php require_once "nav.php"; ?>
 
-            $crud = new crud_vignette();
-            $lesVignettes = $crud->findAllVignette();
-
-            foreach ($lesVignettes as $vignette) {
-                $today = new DateTime();
-                $date_fin_vignette = new DateTime($vignette[3]);
-
-                $interval = $today->diff($date_fin_vignette); 
-                $total_days = $interval->invert ? 0 : $interval->days;
-
-                if ($total_days > 0) {
-                    $months = $interval->m + ($interval->y * 12);
-                    $days = $interval->d;
-                    $validite = "$months mois et $days jours";
-                } else {
-                    $validite = "Expirée";
-                }
-
-                $validite_style = ($total_days < 60 && $total_days >= 0) ? "color: red;" : "color: green;";
-            ?>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4" style="color: navy;">Les Vignettes</h2>
+        <table class="table table-striped table-bordered">
+            <thead>
                 <tr>
-                    <td><?= $vignette[0] ?></td>
-                    <td><?= $vignette[1] ?></td>
-                    <td><?= $vignette[2] ?></td>
-                    <td><?= $vignette[3] ?></td>
-                    <td style="<?= $validite_style ?>"><?= $validite ?></td>
-                    <td><a href="vignetteUpdate.php?matricule=<?= $vignette[1] ?>" class="btn btn-dark btn-sm">Editer</a></td>
+                    <th>id</th>
+                    <th>Matricule</th>
+                    <th>Date Début</th>
+                    <th>Date Fin</th>
+                    <th>Validité</th>
+                    <th>Action</th>
                 </tr>
+            </thead>
+            <tbody>
+                <?php
+                require_once "crud_vignette.php";
+                $crud = new crud_vignette();
+                $lesVignettes = $crud->findAllVignette();
 
-            <?php
-            }
-            ?>
+                foreach ($lesVignettes as $vignette) {
+                    $today = new DateTime();
+                    $date_fin_vignette = new DateTime($vignette[3]);
 
-        </tbody>
-    </table>
-    
+                    $interval = $today->diff($date_fin_vignette);
+                    $total_days = $interval->invert ? 0 : $interval->days;
+
+                    if ($total_days > 0) {
+                        $months = $interval->m + ($interval->y * 12);
+                        $days = $interval->d;
+                        $validite = "$months mois et $days jours";
+                    } else {
+                        $validite = "Expirée";
+                    }
+
+                    $validite_style = ($total_days < 60 && $total_days >= 0) ? "color: red;" : "color: green;";
+                ?>
+                    <tr>
+                        <td><?= $vignette[0] ?></td>
+                        <td><?= $vignette[1] ?></td>
+                        <td><?= $vignette[2] ?></td>
+                        <td><?= $vignette[3] ?></td>
+                        <td style="<?= $validite_style ?>"><?= $validite ?></td>
+                        <td><a href="vignetteUpdate.php?matricule=<?= $vignette[1] ?>" class="btn btn-dark btn-sm">Editer</a></td>
+                    </tr>
+                <?php
+                }
+                ?>
+            </tbody>
+        </table>
+    </div>
+
 </body>
 </html>
