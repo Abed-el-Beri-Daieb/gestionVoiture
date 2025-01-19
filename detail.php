@@ -108,7 +108,7 @@
                         $days = $interval->d;
                         $validite = "$months mois et $days jours";
                     } else {
-                        $validite = "Expirée";
+                        $validite="Expirée";
                     }
 
                     $validite_style = ($total_days < 60 && $total_days >= 0) ? "color: red;" : "color: green;";
