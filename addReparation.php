@@ -7,25 +7,25 @@
     <link rel="stylesheet" href="bootstrap.css">
     <style>
         body {
-            background-color: #f8f9fa; /* Light background */
-            color: #495057; /* Dark text for good contrast */
+            background-color: #f8f9fa; 
+            color: #495057;
         }
 
         .container {
             margin-top: 30px;
-            background-color: #ffffff; /* White form background */
+            background-color: #ffffff; 
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         h2 {
-            color: #007bff; /* Blue title */
+            color: #007bff; 
         }
 
         label {
             font-weight: bold;
-            color: #333333; /* Darker labels */
+            color: #333333;
         }
 
         .form-control {
@@ -39,11 +39,11 @@
         }
 
         .btn-success {
-            background-color: #28a745; /* Success green */
+            background-color: #28a745;
         }
 
         .btn-danger {
-            background-color: #dc3545; /* Danger red */
+            background-color: #dc3545;
         }
 
         .form-group {

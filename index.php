@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="bootstrap.css">
 </head>
 <body>
-    <!-- Navigation bar -->
     <?php require_once "nav.php"; ?>
 
     <div class="container mt-5">
@@ -44,8 +43,7 @@
                 ?>
             </tbody>
         </table>
-
-        <!-- Add Car Button -->
+        
         <div class="text-center mt-4">
             <a href="addVoiture.php" class="btn btn-success btn-lg">Ajouter une Voiture</a>
         </div>

@@ -9,8 +9,8 @@
 <body>
     <?php require_once "nav.php"; ?>
 
-    <div class="container mt-5">
-        <h2 class="text-center mb-4" style="color: navy;">Voiture </h2>
+    <div class="container mt-4">
+        <h3 class="text-center mb-4" style="color: #007bff;">Voiture </h3>
         <table class="table table-striped table-bordered">
             <thead>
                 <tr>
@@ -39,7 +39,7 @@
             </tbody>
         </table>
 
-        <h2 class="text-center mb-4" style="color: navy;">Assurance </h2>
+        <h3 class="text-center mb-4" style="color: #007bff;">Assurance </h3>
         <table class="table table-striped table-bordered">
             <thead>
                 <tr>
@@ -79,7 +79,7 @@
             </tbody>
         </table>
 
-        <h2 class="text-center mb-4" style="color: navy;">Vignette </h2>
+        <h3 class="text-center mb-4" style="color: #007bff;">Vignette </h3>
         <table class="table table-striped table-bordered">
             <thead>
                 <tr>
@@ -118,7 +118,7 @@
             </tbody>
         </table>
 
-        <h2 class="text-center mb-4" style="color: navy;">Pneu </h2>
+        <h3 class="text-center mb-4" style="color: #007bff;">Pneu </h3>
         <table class="table table-striped table-bordered">
             <thead>
                 <tr>

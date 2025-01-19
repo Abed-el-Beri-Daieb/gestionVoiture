@@ -5,6 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GestionVoiture</title>
     <link rel="stylesheet" href="bootstrap.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #495057;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            margin: 50px auto;
+            max-width: 600px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 30px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333333;
+        }
+
+        .form-control {
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .btn {
+            margin-top: 15px;
+            border-radius: 5px;
+        }
+
+        .btn-success {
+            background-color: #28a745;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+        }
+    </style>
 </head>
 <body>
     <?php
@@ -42,14 +87,29 @@
             }   
     ?>
 
-    <form action="assuranceUpdate.php"  method="post" class="form-control">
-        <label>Matricule</label><input type="text" name="matricule" value="<?= htmlspecialchars($matricule) ?>" class="form-control" readonly><br>
-        <label>Date Debut</label> <input type="date" class="form-control" name="date_deb_assurance" value="<?= htmlspecialchars($date_debut) ?>"><br>
-        <label>Date fin</label> <input type="date" class="form-control" name="date_fin_assurance" value="<?= htmlspecialchars($date_fin) ?>"><br>
-        <br>
-        <input type="submit" value="Modifier" class="btn btn-success btn-lg" name="ok">
-        <input type="reset" value="Annuler" class="btn btn-danger btn-lg">
-    </form>
-    
+    <div class="container">
+        <h2>Modifier Assurance</h2>
+        <form action="assuranceUpdate.php" method="post">
+            <div class="form-group">
+                <label for="matricule">Matricule</label>
+                <input type="text" id="matricule" name="matricule" value="<?= htmlspecialchars($matricule) ?>" class="form-control" readonly>
+            </div>
+
+            <div class="form-group">
+                <label for="date_deb_assurance">Date Début</label>
+                <input type="date" id="date_deb_assurance" name="date_deb_assurance" value="<?= htmlspecialchars($date_debut) ?>" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="date_fin_assurance">Date Fin</label>
+                <input type="date" id="date_fin_assurance" name="date_fin_assurance" value="<?= htmlspecialchars($date_fin) ?>" class="form-control" required>
+            </div>
+
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-success btn-lg" name="ok">Modifier</button>
+                <button type="reset" class="btn btn-danger btn-lg">Annuler</button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>

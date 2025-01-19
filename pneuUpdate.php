@@ -5,6 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>getionVoiture</title>
     <link rel="stylesheet" href="bootstrap.css">
+    <style>
+        body {
+            background-color: #f3f4f6;
+            color: #333;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 30px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #495057;
+        }
+
+        .form-control {
+            margin-bottom: 20px;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .btn {
+            margin-top: 15px;
+            border-radius: 5px;
+        }
+
+        .btn-success {
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+    </style>
 </head>
 <body>
     <?php
@@ -44,15 +96,35 @@
         }
     ?>
 
-    <form action="pneuUpdate.php" method="post" class="form-control">
-        <label>Matricule</label><input type="text" name="matricule" class="form-control" value=<?= htmlspecialchars($matricule) ?> readonly> <br>
-        <label>Type</label><input type="text" name="type" class="form-control" value=<?= htmlspecialchars($type) ?>><br>
-        <label>Date_installation</label><input type="date" name="date_installation" class="form-control" value=<?= htmlspecialchars($date_installation) ?>><br>
-        <label>Nb_kilometrage</label><input type="number" name="nb" class="form-control" value=<?= htmlspecialchars($nb_kilometre) ?>><br><br>
+<div class="container">
+        <h2>Modifier Pneu</h2>
+        <form action="pneuUpdate.php" method="post">
+            <div class="form-group">
+                <label for="matricule">Matricule</label>
+                <input type="text" id="matricule" name="matricule" class="form-control" value="<?= htmlspecialchars($matricule) ?>" readonly>
+            </div>
 
-        <input type="submit" value="Modifier" class="btn btn-success btn-lg" name="ok">
-        <input type="reset" value="Annuler" class="btn btn-danger btn-lg">
-    </form>
+            <div class="form-group">
+                <label for="type">Type</label>
+                <input type="text" id="type" name="type" class="form-control" value="<?= htmlspecialchars($type) ?>">
+            </div>
+
+            <div class="form-group">
+                <label for="date_installation">Date d'installation</label>
+                <input type="date" id="date_installation" name="date_installation" class="form-control" value="<?= htmlspecialchars($date_installation) ?>">
+            </div>
+
+            <div class="form-group">
+                <label for="nb">Kilométrage</label>
+                <input type="number" id="nb" name="nb" class="form-control" value="<?= htmlspecialchars($nb_kilometre) ?>">
+            </div>
+
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-success btn-lg" name="ok">Modifier</button>
+                <button type="reset" class="btn btn-danger btn-lg">Annuler</button>
+            </div>
+        </form>
+    </div>
 
 </body>
 </html>

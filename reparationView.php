@@ -9,8 +9,8 @@
 <body>
     <?php require_once "nav.php"; ?>
 
-    <div class="container mt-5">
-        <h2 class="text-center mb-4" style="color: navy;">Les Réparations </h2>
+    <div class="container mt-4">
+        <h2 class="text-center mb-4" style="color: #007bff;">Les Réparations </h2>
         <table class="table table-striped table-bordered">
             <thead>
                 <tr>

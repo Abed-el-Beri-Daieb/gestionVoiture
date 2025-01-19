@@ -5,6 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gestionVoiture</title>
     <link rel="stylesheet" href="bootstrap.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 30px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #495057;
+        }
+
+        .form-control {
+            margin-bottom: 20px;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .btn {
+            margin-top: 15px;
+            border-radius: 5px;
+        }
+
+        .btn-success {
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+    </style>
 </head>
 <body>
     <?php
@@ -45,14 +96,31 @@
 
     ?>
 
-    <form action="vignetteUpdate.php" method="post" class="form-control">
-        <label>Matricule</label><input type="text" class="form-control" name="matricule" value=<?= htmlspecialchars($matricule) ?> readonly> <br>
-        <label>Date_Debut</label><input type="date" class="form-control" name="date_deb_vignette" value=<?= htmlspecialchars($date_debut) ?>> <br>
-        <label>Date_Fin</label> <input type="date" class="form-control" name="date_fin_vignette" value=<?= htmlspecialchars($date_fin) ?>> <br> <br>
 
-        <input type="submit" value="Modifier" class="btn btn-success btn-lg" name="ok">
-        <input type="reset" value="Annuler" class="btn btn-danger btn-lg">
-    </form>
+<div class="container">
+        <h2>Modifier Vignette</h2>
+        <form action="vignetteUpdate.php" method="post">
+            <div class="form-group">
+                <label for="matricule">Matricule</label>
+                <input type="text" id="matricule" name="matricule" class="form-control" value="<?= htmlspecialchars($matricule) ?>" readonly>
+            </div>
+
+            <div class="form-group">
+                <label for="date_deb_vignette">Date Début</label>
+                <input type="date" id="date_deb_vignette" name="date_deb_vignette" class="form-control" value="<?= htmlspecialchars($date_debut) ?>">
+            </div>
+
+            <div class="form-group">
+                <label for="date_fin_vignette">Date Fin</label>
+                <input type="date" id="date_fin_vignette" name="date_fin_vignette" class="form-control" value="<?= htmlspecialchars($date_fin) ?>">
+            </div>
+
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-success btn-lg" name="ok">Modifier</button>
+                <button type="reset" class="btn btn-danger btn-lg">Annuler</button>
+            </div>
+        </form>
+    </div>
     
 </body>
 </html>
