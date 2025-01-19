@@ -65,13 +65,20 @@
         $date = htmlspecialchars($_POST['date']);
         $designation = htmlspecialchars($_POST['designation']);
         $fournisseur = htmlspecialchars($_POST['fournisseur']);
-    
-        $reparation = new reparation($matricule, $prix, $date, $designation, $fournisseur);
-        $res = $crud->addReparation($reparation);
 
-        if ($res) {
-            header("location:reparationView.php");
-            exit;
+        $exist = $crud->find($matricule);
+
+        if($exist){
+            $reparation = new reparation($matricule, $prix, $date, $designation, $fournisseur);
+            $res = $crud->addReparation($reparation);
+
+            if ($res) {
+                header("location:reparationView.php");
+                exit;
+            }
+        }
+        else {
+            echo "<script>alert('Le matricule que vous avez renseigné n existe pas. Veuillez réessayer.');</script>";
         }
     }
 ?>
