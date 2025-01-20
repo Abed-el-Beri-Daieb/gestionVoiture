@@ -14,7 +14,6 @@
         <table class="table table-striped table-bordered">
             <thead>
                 <tr>
-                    <th>id</th>
                     <th>Matricule</th>
                     <th>Date Début</th>
                     <th>Date Fin</th>
@@ -46,7 +45,6 @@
                     $validite_style = ($total_days < 60 && $total_days >= 0) ? "color: red;" : "color: green;";
                 ?>
                     <tr>
-                        <td><?= $vignette[0] ?></td>
                         <td><?= $vignette[1] ?></td>
                         <td><?= $vignette[2] ?></td>
                         <td><?= $vignette[3] ?></td>

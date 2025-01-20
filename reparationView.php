@@ -14,7 +14,6 @@
         <table class="table table-striped table-bordered">
             <thead>
                 <tr>
-                    <th>id</th>
                     <th>Matricule</th>
                     <th>Prix (dt)</th>
                     <th>Date</th>
@@ -32,7 +31,6 @@
                 foreach ($lesReparation as $reparation) {
                 ?>
                     <tr>
-                        <td><?= $reparation[0] ?></td>
                         <td><?= $reparation[1] ?></td>
                         <td><?= $reparation[2] ?></td>
                         <td><?= $reparation[3] ?></td>

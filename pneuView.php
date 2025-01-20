@@ -14,7 +14,6 @@
         <table class="table table-striped table-bordered" id="example">
             <thead>
                 <tr>
-                    <th>id</th>
                     <th>Matricule</th>
                     <th>Type</th>
                     <th>Date Installation</th>
@@ -31,7 +30,6 @@
                 foreach ($lesPneus as $pneu) {
                 ?>
                     <tr>
-                        <td><?= $pneu[0] ?></td>
                         <td><?= $pneu[1] ?></td>
                         <td><?= $pneu[2] ?></td>
                         <td><?= $pneu[3] ?></td>
