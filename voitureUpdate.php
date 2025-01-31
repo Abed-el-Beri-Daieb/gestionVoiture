@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GestionVoiture</title>
-    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="bootstrap6.css">
     <style>
         body {
             background-color: #f8f9fa;
@@ -22,7 +22,7 @@
 
         h2 {
             text-align: center;
-            color: #007bff;
+            color: #005F30;
             margin-bottom: 30px;
         }
 

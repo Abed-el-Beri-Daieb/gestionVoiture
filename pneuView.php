@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gestionVoiture</title>
-    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="bootstrap6.css">
 </head>
 <body>
     <?php require_once "nav.php"; ?>
 
     <div class="container mt-4">
-        <h2 class="text-center mb-4" style="color: #007bff;">Les Pneus</h2>
+        <h2 class="text-center mb-4" style="color: #005F30;">Les Pneus</h2>
         <table class="table table-striped table-bordered" id="example">
             <thead>
                 <tr>
