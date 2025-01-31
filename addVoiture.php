@@ -55,7 +55,6 @@
         require_once "crud_voiture.php";
         require_once "crud_assurance.php";
         require_once "crud_vignette.php";
-        require_once "crud_pneu.php";
 
         $crudVoi = new crud_voiture();
         $id_voiture = htmlspecialchars($_POST['id_v']);
@@ -78,14 +77,8 @@
         $vignette = new vignette($matricule,$date_deb_vignette,$date_fin_vignette);
         $res3 = $crudVig->addVignette($vignette);
 
-        $crudP = new crud_pneu();
-        $type_pneu = htmlspecialchars($_POST['type_pneu']);
-        $date_installation = htmlspecialchars($_POST['date_installation']);
-        $nb_kilometre = htmlspecialchars($_POST['nb_kilometre']);
-        $pneu = new pneu($matricule,$type_pneu,$date_installation,$nb_kilometre);
-        $res4 = $crudP->addPneu($pneu);
 
-        if ($res4) {
+        if ($res3) {
             header("location:index.php");
             exit;
         }
@@ -134,19 +127,6 @@
             <input type="date" name="date_fin_vignette" class="form-control" required>
         </div>
 
-        <!-- Pneu -->
-        <div class="form-group">
-            <label for="type_pneu">Type de Pneu</label>
-            <input type="text" name="type_pneu" id="type_pneu" class="form-control" required>
-        </div>
-        <div class="form-group">
-            <label for="date_installation">Date Installation</label>
-            <input type="date" name="date_installation" id="date_installation" class="form-control" required>
-        </div>
-        <div class="form-group">
-            <label for="nb_kilometre">Kilométrage</label>
-            <input type="number" name="nb_kilometre" id="nb_kilometre" class="form-control" required>
-        </div>
 
         <div class="form-group text-center">
             <input type="submit" value="Ajouter" name="ok" class="btn btn-success btn-lg">

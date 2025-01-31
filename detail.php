@@ -118,28 +118,6 @@
             </tbody>
         </table>
 
-        <h3 class="text-center mb-4" style="color: #005F30;">Pneu </h3>
-        <table class="table table-striped table-bordered">
-            <thead>
-                <tr>
-                    <th>Type</th>
-                    <th>Date Installation</th>
-                    <th>Nb Kilométrage</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                require_once "crud_pneu.php";
-                $crud = new crud_pneu();
-                $pneu = $crud->find($matricule);
-                ?>
-                <tr>
-                    <td><?= $pneu[2] ?></td>
-                    <td><?= $pneu[3] ?></td>
-                    <td><?= $pneu[4] ?></td>
-                </tr>
-            </tbody>
-        </table>
     </div>
 </body>
 </html>

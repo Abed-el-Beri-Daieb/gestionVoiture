@@ -20,9 +20,6 @@
                     <a class="nav-link" href="vignetteView.php">Vignette</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="pneuView.php">Pneu</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="reparationView.php">Reparation</a>
                 </li>
             </ul>
